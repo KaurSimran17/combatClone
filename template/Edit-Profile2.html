@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Domain</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <style>
+        #toggleForm,
+        #add1 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="left edit-profile edit-left">
+            <img src="{% static 'images/main.png'%}" alt="" class="img1">
+            <!-- <div class="loader" id="loader"></div> -->
+            <!-- <img src="imgs/main1.png" alt="" class="img2"> -->
+        </div>
+
+        <div class="right edit-profile-right" id="right_section">
+            <div class="main-header">
+                <a href="" id="back-btn"><i class='bx bx-chevron-left'></i></a>
+                <a href="" id="logout"><i class='bx bx-log-out'></i></a>
+            </div>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="edit-right-box">
+                    <div class="right-box-left">
+                        <div class="content-box1">
+                            <div class="edit-img">
+                                <div class="avatar-upload">
+                                    <div class="avatar-edit">
+                                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                        <label for="imageUpload">Change</label>
+                                    </div>
+                                    <div class="avatar-preview">
+                                        <div id="imagePreview" style="background-image: url('imgs/img1.png');">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box3" style="margin-top: 10px;">
+                                <div class="edit-input-left">
+                                    <label for="">Fight Name</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input1">
+                                        <span id="btn1"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="edit-input-left">
+                                    <label for="">Weight</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input2">
+                                        <span id="btn2"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="edit-input-left">
+                                    <label for="">Height</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input3">
+                                        <span id="btn3"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box1">
+                            <div class="box1">
+                                <div class="edit-input">
+                                    <h2>Personal Information</h2>
+                                    <div class="edit-input-left">
+                                        <label for="">First Name</label>
+                                        <div class="main-input">
+                                            <input type="text" name="" id="input4">
+                                            <span id="btn4"><i class='bx bxs-pencil'></i></span>
+                                        </div>
+                                        <label for="">Last Name</label>
+                                        <div class="main-input">
+                                            <input type="text" name="" id="input5">
+                                            <span id="btn5"><i class='bx bxs-pencil'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="change-profile-img">
+                                    <div class="input upload_image">
+                                        <div class="avatar-upload1">
+                                            <div class="avatar-edit1">
+                                                <input type='file' id="imageUpload1" accept=".png, .jpg, .jpeg" />
+                                                <label for="imageUpload1">Change</label>
+                                            </div>
+                                            <div class="avatar-preview1">
+                                                <div id="imagePreview1"
+                                                    style="background-image: url('imgs/profile.png');">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box2">
+                                <div class="edit-input">
+                                    <div class="edit-input-left">
+                                        <label for="">Date of Birth</label>
+                                        <div class="main-input">
+                                            <input type="text" name="" id="input6" placeholder="DD/MM/YYYY">
+                                            <div class="dateTime date-hide" id="hideDate">
+                                                <div class="select">
+                                                    <select id="select_day">
+                                                        <option>Day</option>
+                                                    </select>
+                                                </div>
+                                                <div class="select">
+                                                    <select id="select_month">
+                                                        <option>Month</option>
+                                                    </select>
+                                                </div>
+                                                <div class="select">
+                                                    <select id="select_year">
+                                                        <option>Year</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <span id="btn6"><i class='bx bxs-pencil'></i></span>
+                                        </div>
+                                        <label for="">Email</label>
+                                        <div class="main-input">
+                                            <input type="text" name="" id="input7">
+                                            <span id="btn7"><i class='bx bxs-pencil'></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="change-profile-img">
+                                    <label for="">Gender</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input8">
+                                        <span id="btn8"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <label for="">Contact No.</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input9">
+                                        <span id="btn9"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box3">
+                                <div class="edit-input-left">
+                                    <label for="">City</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input10">
+                                        <span id="btn10"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="edit-input-left">
+                                    <label for="">Town</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input11">
+                                        <span id="btn11"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="edit-input-left">
+                                    <label for="">Country</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input12">
+                                        <span id="btn12"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-box2">
+                            <h2>Social Links</h2>
+                            <img src="imgs/Line.png" alt="">
+                            <div class="info-box">
+                                <div class="info-box-left">
+                                    <label for="">Facbook</label>
+                                    <div class="main-input">
+                                        <input type="text" name="facebook" id="input13">
+                                        <span id="btn13"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <label for="">Twitter </label>
+                                    <div class="main-input">
+                                        <input type="text" name="twitter" id="input14">
+                                        <span id="btn14"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="info-box-right">
+                                    <label for="">Instagram</label>
+                                    <div class="main-input">
+                                        <input type="text" name="instagram" id="input15">
+                                        <span id="btn15"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <label for="">Gmail</label>
+                                    <div class="main-input">
+                                        <input type="text" name="gmail" id="input16">
+                                        <span id="btn16"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box2">
+                            <h2>Gym Info.</h2>
+                            <img src="{%static 'imags/Line.png'%}" alt="">
+                            <div class="info-box">
+                                <div class="info-box-left" id="info-box-left">
+                                    <label for="">Gym Name</label>
+                                    <div class="main-input">
+                                        <input type="text" name="gym_name" id="input17">
+                                        <span id="btn17"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <label for="">Discipline </label>
+                                    <div class="main-input" id="mainInput">
+                                        <input type="text" name="discipline" id="input18">
+                                        <span id="btn18"><i class='bx bxs-pencil'></i></span>
+                                        <span style="margin-left: 3px;" class="bar-line"><i
+                                                class='bx bx-plus'></i></span>
+                                    </div>
+                                </div>
+                                <div class="info-box-right">
+                                    <label for="">URL Link to GYM</label>
+                                    <div class="main-input">
+                                        <input type="text" name="gym_url" id="input19">
+                                        <span id="btn19"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <label for="">Email</label>
+                                    <div class="main-input">
+                                        <input type="text" name="email" id="input20">
+                                        <span id="btn20"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-heading">
+                                <img src="{% static 'images/Line.png'%}" alt="">
+                                <h3>GYM Address</h3>
+                                <img src="{% static 'images/Line.png'%}" alt="">
+                            </div>
+                            <div class="info-box">
+                                <div class="info-box-left">
+                                    <label for="">Apartment & Suite </label>
+                                    <div class="main-input">
+                                        <input type="text" name="apartment" id="input21">
+                                        <span id="btn21"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <label for="">Town </label>
+                                    <div class="main-input">
+                                        <input type="text" name="town" id="input22">
+                                        <span id="btn22"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="info-box-right">
+                                    <label for="">City</label>
+                                    <div class="main-input">
+                                        <input type="text" name="city" id="input23">
+                                        <span id="btn23"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <label for="">Country</label>
+                                    <div class="main-input">
+                                        <input type="text" name="country" id="input24">
+                                        <span id="btn24"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-heading">
+                                <img src="{%static 'images/Line.png'%}" alt="">
+                                <h3>GYM Contact Details</h3>
+                                <img src="{%static 'images/Line.png'%}" alt="">
+                            </div>
+                            <div class="info-box">
+                                <div class="info-box-left">
+                                    <label for="">Phone No. </label>
+                                    <div class="main-input">
+                                        <input type="text" name="phone_number" id="input25">
+                                        <span id="btn25"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="info-box-right">
+                                    <label for="">Mobile Number</label>
+                                    <div class="main-input">
+                                        <input type="text" name="mobile" id="input26">
+                                        <span id="btn26"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-heading">
+                                <img src="{%static 'images/Line.png'%}" alt="">
+                                <h3>GYM Contact Details</h3>
+                                <img src="{%static 'images/Line.png'%}" alt="">
+                            </div>
+                            <div class="info-box">
+                                <div class="info-box-left">
+                                    <label for="">Head Coach</label>
+                                    <div class="main-input">
+                                        <input type="text" name="head_coach" id="input27">
+                                        <span id="btn27"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="info-box-right" id="info-box-right">
+                                    <label for="">Additional Coach</label>
+                                    <div class="main-input" id="mainInput2">
+                                        <input type="text" name="add_coach" id="input28">
+                                        <span id="btn28"><i class='bx bxs-pencil'></i></span>
+                                        <span style="margin-left: 3px;" class="bar-line1"><i
+                                                class='bx bx-plus'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box3">
+                            <h2>Achievements</h2>
+                            <div class="multiForms">
+                                <div class="showBoxes" id="toggleForm">
+                                    <form action="">
+                                        <div class="achievement-box" id="achievBox">
+                                            <span class="cut-btn remove"><i class='bx bx-x'></i></span>
+                                            <div class="first-box">
+                                                <div class="achievement-boxes">
+                                                    <label for="">Year</label>
+                                                    <div class="main-input">
+                                                        <input type="text" name="year" id="input29">
+                                                        <span id="btn29"><i class='bx bxs-pencil'></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="achievement-boxes">
+                                                    <label for="">Amature/Pro</label>
+                                                    <div class="main-input">
+                                                        <input type="text" name="amature" id="input30">
+                                                        <span id="btn30"><i class='bx bxs-pencil'></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="achievement-boxes">
+                                                    <label for="">Weight</label>
+                                                    <div class="main-input">
+                                                        <input type="text" name="weight" id="input31">
+                                                        <span id="btn31"><i class='bx bxs-pencil'></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="second-box">
+                                                <div class="achievement-boxes">
+                                                    <label for="">Discipline</label>
+                                                    <div class="main-input">
+                                                        <input type="text" name="discipline" id="input32">
+                                                        <span id="btn32"><i class='bx bxs-pencil'></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="achievement-boxes">
+                                                    <label for="">Sanction</label>
+                                                    <div class="main-input">
+                                                        <input type="text" name="sanction" id="input33">
+                                                        <span id="btn33"><i class='bx bxs-pencil'></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="second-box">
+                                                <div class="achievement-boxes">
+                                                    <label for="">Rule Set</label>
+                                                    <div class="main-input">
+                                                        <input type="text" name="rule" id="input34">
+                                                        <span id="btn34"><i class='bx bxs-pencil'></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="achievement-boxes">
+                                                    <label for="">Achievement</label>
+                                                    <div class="main-input">
+                                                        <input type="text" name="achieve" id="input35">
+                                                        <span id="btn35"><i class='bx bxs-pencil'></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="add-more" id="hide-btn" onclick="showForm()">
+                                <i class='bx bx-plus'></i>
+                            </div>
+                            <div class="add-more" id="add1">
+                                <i class='bx bx-plus'></i>
+                            </div>
+
+                        </div>
+
+                        <div class="content-box4">
+                            <h2>Ring Record</h2>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Boxing Ring Record</p>
+                                    <span id="btn44"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide44">
+                                    <div class="head1">
+                                        <h2>Exibition</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Total</label>
+                                            <div class="add adding-box total">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" class="number" name="box_total" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Corporate</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_corp_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" class="number" value="00">
+                                                <button type="button" name="box_corp_loose" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_corp_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Armature</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_arm_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_arm_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_arm_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Professional</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_prof_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_prof_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="box_prof_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>K1 Record</p>
+                                    <span id="btn45"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide45">
+                                    <div class="head1">
+                                        <h2>Exibition</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Total</label>
+                                            <div class="add total">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Paded</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_corp_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_corp_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_corp_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Armature</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_arm_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_arm_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_arm_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Professional</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_prof_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_prof_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="k1_prof_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Mod Thai Record</p>
+                                    <span id="btn46"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide46">
+                                    <div class="head1">
+                                        <h2>Exibition</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Total</label>
+                                            <div class="add total">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Paded</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_corp_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_corp_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_corp_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Armature</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_arm_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_arm_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_arm_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Professional</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_prof_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_prof_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mod_prof_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Muya Thai Record</p>
+                                    <span id="btn47"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide47">
+                                    <div class="head1">
+                                        <h2>Exibition</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Total</label>
+                                            <div class="add total">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Paded</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_corp_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_corp_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_corp_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Armature</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_arm_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_arm_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_arm_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Professional</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_prof_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text"  name="muya_prof_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="muya_prof_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>MMA Record</p>
+                                    <span id="btn48"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide48">
+                                    <div class="head1">
+                                        <h2>Exibition</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Total</label>
+                                            <div class="add total">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mma_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Class C</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_C_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_C_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_C_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Class B</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_B_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_B_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_B_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Class A</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_A_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_A_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="class_A_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Armature</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mma_arm_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mma_arm_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mma_arm_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="head1">
+                                        <h2>Professional</h2>
+                                        <img src="{%static 'images/Line.png'%}" alt="">
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="increase-boxes">
+                                            <label for="">Win</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mma_prof_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Loose</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mma_prof_loose" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Draw</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="mma_prof_draw" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box4">
+                            <h2>Martial Art Record </h2>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Brazilian Jiu Jitsu</p>
+                                    <span id="btn49"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide49">
+                                    <div class="increase-box">
+                                        <div class="info-box record-info-box">
+                                            <div class="info-box-left">
+                                                <label for="">Additional Style</label>
+                                                <div class="main-input">
+                                                    <input type="text" name="brazilian_style" id="input1">
+                                                    <span id="btn1"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box-right">
+                                                <label for="">Rank</label>
+                                                <div class="main-input">
+                                                    <select name="brazilian_rank" id="">
+                                                        <option value="" selected disabled hidden></option>
+                                                        <option value="White">White</option>
+                                                        <option value="Yellow">Yellow</option>
+                                                        <option value="Green">Green</option>
+                                                        <option value="Blue">Blue</option>
+                                                        <option value="Red">Red</option>
+                                                        <option value="Brown">Brown</option>
+                                                        <option value="Black">Black</option>
+                                                    </select>
+                                                    <span id="btn1"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="increase-box increase-box1">
+                                        <div class="increase-boxes">
+                                            <label for="">Experience(yr)</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text"  name="brazilian_exp" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Total Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="brazilian_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Win Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="brazilian_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Wrestling</p>
+                                    <span id="btn50"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide50">
+                                    <div class="increase-box">
+                                        <div class="info-box record-info-box">
+                                            <div class="info-box-left">
+                                                <label for="">Additional Style</label>
+                                                <div class="main-input">
+                                                    <input type="text" name="wrestling_style" id="input36">
+                                                    <span id="btn36"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box-right">
+                                                <label for="">Rank</label>
+                                                <div class="main-input">
+                                                    <select name="wrestling_rank" id="">
+                                                        <option value="" selected disabled hidden></option>
+                                                        <option value="Bronze">Bronze</option>
+                                                        <option value="Silver">Silver</option>
+                                                        <option value="Gold">Gold</option>
+                                                        <span id="btn1"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="increase-box increase-box1">
+                                        <div class="increase-boxes">
+                                            <label for="">Experience(yr)</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="wrestling_exp" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Total Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="wrestling_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Win Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="wrestling_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Taekwondo WT</p>
+                                    <span id="btn51"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide51">
+                                    <div class="increase-box">
+                                        <div class="info-box record-info-box">
+                                            <div class="info-box-left">
+                                                <label for="">Additional Style</label>
+                                                <div class="main-input">
+                                                    <input type="text" name="taekwondo_style" id="input1">
+                                                    <span id="btn1"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box-right">
+                                                <label for="">Rank</label>
+                                                <div class="main-input">
+                                                    <select name="taekwondo_rank" id="">
+                                                        <option value="" selected disabled hidden></option>
+                                                        <option value="White">White</option>
+                                                        <option value="Yellow">Yellow</option>
+                                                        <option value="Green">Green</option>
+                                                        <option value="Blue">Blue</option>
+                                                        <option value="Red">Red</option>
+                                                        <option value="Brown">Brown</option>
+                                                        <option value="Black">Black</option>
+                                                    </select>
+                                                    <span id="btn1"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="increase-box increase-box1">
+                                        <div class="increase-boxes">
+                                            <label for="">Experience(yr)</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="taekwondo_exp" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Total Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="taekwondo_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Win Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="taekwondo_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Taekwondo ITF</p>
+                                    <span id="btn52"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide52">
+                                    <div class="increase-box">
+                                        <div class="info-box record-info-box">
+                                            <div class="info-box-left">
+                                                <label for="">Additional Style</label>
+                                                <div class="main-input">
+                                                    <input type="text" name="taekwondo_itf_style" id="input36">
+                                                    <span id="btn36"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box-right">
+                                                <label for="">Rank</label>
+                                                <div class="main-input">
+                                                    <select name="taekwondo_itf_rank" id="">
+                                                        <option value="" selected disabled hidden></option>
+                                                        <option value="White">White</option>
+                                                        <option value="Yellow">Yellow</option>
+                                                        <option value="Green">Green</option>
+                                                        <option value="Blue">Blue</option>
+                                                        <option value="Red">Red</option>
+                                                        <option value="Brown">Brown</option>
+                                                        <option value="Black">Black</option>
+                                                    </select>
+                                                    <span id="btn37"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="increase-box increase-box1">
+                                        <div class="increase-boxes">
+                                            <label for="">Experience(yr)</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="taekwondo_itf_exp" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Total Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="taekwondo_itf_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Win Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="taekwondo_itf_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Judo</p>
+                                    <span id="btn53"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide53">
+                                    <div class="increase-box">
+                                        <div class="info-box record-info-box">
+                                            <div class="info-box-left">
+                                                <label for="">Additional Style</label>
+                                                <div class="main-input">
+                                                    <input type="text" name="judo_style" id="input38">
+                                                    <span id="btn38"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box-right">
+                                                <label for="">Rank</label>
+                                                <div class="main-input">
+                                                    <select name="judo_rank" id="">
+                                                        <option value="" selected disabled hidden></option>
+                                                        <option value="White">White</option>
+                                                        <option value="Yellow">Yellow</option>
+                                                        <option value="Green">Green</option>
+                                                        <option value="Green">Blue</option>
+                                                        <option value="Red">Red</option>
+                                                        <option value="Brown">Brown</option>
+                                                        <option value="Black">Black</option>
+                                                    </select>
+                                                    <span id="btn39"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="increase-box increase-box1">
+                                        <div class="increase-boxes">
+                                            <label for="">Experience(yr)</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="judo_exp" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Total Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="judo_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Win Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="judo_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Kyokushin</p>
+                                    <span id="btn54"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide54">
+                                    <div class="increase-box">
+                                        <div class="info-box record-info-box">
+                                            <div class="info-box-left">
+                                                <label for="">Additional Style</label>
+                                                <div class="main-input">
+                                                    <input type="text" name="kyokushin_style" id="input40">
+                                                    <span id="btn40"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box-right">
+                                                <label for="">Rank</label>
+                                                <div class="main-input">
+                                                    <select name="kyokushin_rank" id="">
+                                                        <option value="" selected disabled hidden></option>
+                                                        <option value="White">White</option>
+                                                        <option value="Yellow">Yellow</option>
+                                                        <option value="Green">Green</option>
+                                                        <option value="Blue">Blue</option>
+                                                        <option value="Red">Red</option>
+                                                        <option value="Brown">Brown</option>
+                                                        <option value="Black">Black</option>
+                                                    </select>
+                                                    <span id="btn41"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="increase-box increase-box1">
+                                        <div class="increase-boxes">
+                                            <label for="">Experience(yr)</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="kyokushin_exp" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Total Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="kyokushin_total" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Win Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" name="kyokushin_win" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recordbox">
+                                <div class="recordbox_heading">
+                                    <p>Other Style</p>
+                                    <span id="btn55"><i class='bx bx-chevron-down'></i></span>
+                                </div>
+                                <div class="record-entry" id="hide55">
+                                    <label for="">Format</label>
+                                    <div class="main-input" style="width: 50%;">
+                                        <input type="text" name="format" id="input40">
+                                        <span id="btn40"><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                    <div class="increase-box">
+                                        <div class="info-box record-info-box">
+
+                                            <div class="info-box-left">
+                                                <label for="">Additional Style</label>
+                                                <div class="main-input">
+                                                    <input type="text" name="" id="input40">
+                                                    <span id="btn40"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box-right">
+                                                <label for="">Rank</label>
+                                                <div class="main-input">
+                                                    <select name="" id="">
+                                                        <option value="" selected disabled hidden></option>
+                                                        <option value="">White</option>
+                                                        <option value="">Yellow</option>
+                                                        <option value="">Green</option>
+                                                        <option value="">Blue</option>
+                                                        <option value="">Red</option>
+                                                        <option value="">Brown</option>
+                                                        <option value="">Black</option>
+                                                    </select>
+                                                    <span id="btn41"><i class='bx bxs-pencil'></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="increase-box increase-box1">
+                                        <div class="increase-boxes">
+                                            <label for="">Experience(yr)</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Total Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="increase-boxes">
+                                            <label for="">Win Fight</label>
+                                            <div class="add adding-box">
+                                                <button type="button" id="sub" class="sub minus">-</button>
+                                                <input type="text" class="number" value="00">
+                                                <button type="button" id="add" class="add">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="recordbox" id="hideRecordBox">
+                                    <div class="recordbox_heading" style="width: 100%;">
+                                        <p>Other Style</p>
+                                        <span id="btnss"><i class='bx bx-plus'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="right-box-right">
+                        <div class="right-box-content">
+                            <div class="boxes">
+                                <p>Save Changes</p>
+                            </div>
+                            <img src="{%static 'images/Line.png'%}" alt="">
+                            <input type="submit" name="submit" id="btn1">Save</span>
+                        </div>
+                        <div class="right-box-content discipline-box">
+                            <div class="boxes">
+                                <p>Discipline</p>
+                            </div>
+                            <img src="{%static 'images/Line.png'%}" alt="">
+                            <div class="text-field" id="textfield">
+                                <div class="discipline-line" id="lineremove">
+                                    <input type="text">
+                                    <span id="remove1" class="remove1"><i class='bx bx-x'></i></span>
+                                </div>
+                            </div>
+                            <div class="add-input">
+                                <i class='bx bx-plus'></i>
+                            </div>
+
+                        </div>
+                        <div class="right-box-content">
+                            <div class="boxes">
+                                <p>Status</p>
+                                <div class="color-indicator" id="colorChanger"></div>
+                            </div>
+                            <img src="{%static 'images/Line.png'%}" alt="">
+                            <div class="active-btns">
+                                <span id="active" class="color">In-active</span>
+                                <span id="retired" class="color">Retired</span>
+                            </div>
+                        </div>
+                        <div class="right-box-content">
+                            <div class="boxes">
+                                <p>Change Password</p>
+                            </div>
+                            <img src="{%static 'images/Line.png'%}" alt="">
+                            <span id="btn1">Change</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+    <script src="js/script.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function () {
+            readURL(this);
+        });
+        function readURL1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview1').css('background-image', 'url(' + e.target.result + ')');
+                    $('#imagePreview1').hide();
+                    $('#imagePreview1').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload1").change(function () {
+            readURL1(this);
+        });
+
+        // $(function () {
+        //     $(".add-more").bind("click", function () {
+        //         var div = $("<li/>");
+        //         div.html(GetDynamicTextBox(""));
+        //         $("#showBox").append(div);
+        //     });
+        //     $("body").on("click", ".remove", function () {
+        //         $(this).closest("#achievBox").remove();
+        //     });
+        // });
+        function GetDynamicTextBox(value) {
+            return `<div class="achievement-box" id="achievBox">
+                            <span class="cut-btn remove"><i class='bx bx-x'></i></span>
+                            <div class="first-box">
+                                <div class="achievement-boxes">
+                                    <label for="">Year</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input29" >
+                                        <span id="btn29" ><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="achievement-boxes">
+                                    <label for="">Amature/Pro</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input30" >
+                                        <span id="btn30" ><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="achievement-boxes">
+                                    <label for="">Weight</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input31" >
+                                        <span id="btn31" ><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="second-box">
+                                <div class="achievement-boxes">
+                                    <label for="">Discipline</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input32" >
+                                        <span id="btn32" ><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="achievement-boxes">
+                                    <label for="">Sanction</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input33" >
+                                        <span id="btn33" ><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="second-box">
+                                <div class="achievement-boxes">
+                                    <label for="">Rule Set</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input34" >
+                                        <span id="btn34" ><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                                <div class="achievement-boxes">
+                                    <label for="">Achievement</label>
+                                    <div class="main-input">
+                                        <input type="text" name="" id="input35" >
+                                        <span id="btn35" ><i class='bx bxs-pencil'></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            `
+        }
+
+        $(".add-more").click(function () {
+            $("#showBox").slideDown();
+        });
+        $(function () {
+            $(".add-input").bind("click", function () {
+                var div = $("<li/>");
+                div.html(GetDynamicBox(""));
+                $("#textfield").append(div);
+            });
+            $("body").on("click", ".remove1", function () {
+                $(this).closest("#lineremove").remove();
+            });
+        });
+        function GetDynamicBox(value) {
+            return `<div class="discipline-line" id="lineremove">
+                                <input type="text">
+                                <span id="remove1" class="remove1"><i class='bx bx-x'></i></span>
+                            </div>`
+        }
+        $(function () {
+            $(".bar-line").bind("click", function () {
+                var div = $("<li/>");
+                div.html(GetDynamicBox1(""));
+                $("#info-box-left").append(div);
+            });
+            $("body").on("click", ".remove2", function () {
+                $(this).closest("#mainInput").remove();
+            });
+        });
+        function GetDynamicBox1(value) {
+            return `<div class="main-input" id="mainInput">
+                                            <input type="text" name="" id="input18">
+                                            <span id="btn18"><i class='bx bxs-pencil'></i></span>
+                                            <span style="margin-left: 3px;" class="remove2"><i class='bx bx-x'></i></span>
+                                    </div>`
+        }
+        $(function () {
+            $(".bar-line1").bind("click", function () {
+                var div = $("<li/>");
+                div.html(GetDynamicBox2(""));
+                $("#info-box-right").append(div);
+            });
+            $("body").on("click", ".remove3", function () {
+                $(this).closest("#mainInput2").remove();
+            });
+        });
+        function GetDynamicBox2(value) {
+            return `<div class="main-input" id="mainInput2">
+                                        <input type="text" name="" id="input28">
+                                        <span id="btn28"><i class='bx bxs-pencil'></i></span>
+                                        <span style="margin-left: 3px;" class="remove3"><i class='bx bx-x'></i></span>
+                                    </div>`
+        }
+        $(function () {
+            $(".other-btn").bind("click", function () {
+                var div = $("<li/>");
+                div.html(GetDynamic(""));
+                $("#otherside").append(div);
+            });
+            $("body").on("click", ".remove1", function () {
+                $(this).closest("#lineremove1").remove();
+            });
+        });
+        function GetDynamic(value) {
+            return `<div class="record-entry" id="hide55">
+                                <div class="increase-box">
+                                    <div class="info-box record-info-box">
+                                        <div class="info-box-left">
+                                            <label for="">Additional Style</label>
+                                            <div class="main-input">
+                                                <input type="text" name="" id="input42" >
+                                                <span id="btn42"><i class='bx bxs-pencil'></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="info-box-right">
+                                            <label for="">Rank</label>
+                                            <div class="main-input">
+                                                <input type="text" name="" id="input43" >
+                                                <span id="btn43"><i class='bx bxs-pencil'></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="increase-box increase-box1">
+                                    <div class="increase-boxes">
+                                        <label for="">Experience(yr)</label>
+                                        <div class="add adding-box">
+                                            <button type="button" id="sub" class="sub minus">-</button>
+                                            <input type="text" class="number" value="00">
+                                            <button type="button" id="add" class="add">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="increase-boxes">
+                                        <label for="">Total Fight</label>
+                                        <div class="add adding-box">
+                                            <button type="button" id="sub" class="sub minus">-</button>
+                                            <input type="text" class="number" value="00">
+                                            <button type="button" id="add" class="add">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="increase-boxes">
+                                        <label for="">Win Fight</label>
+                                        <div class="add adding-box">
+                                            <button type="button" id="sub" class="sub minus">-</button>
+                                            <input type="text" class="number" value="00">
+                                            <button type="button" id="add" class="add">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-more other-btn">
+                                    <i class='bx bx-plus'></i>
+                                </div>
+                            </div>`
+        }
+        $('.add').click(function () {
+            if ($(this).prev().val() < 200) {
+                $(this).prev().val(+$(this).prev().val() + 1);
+            }
+        });
+        $('.sub').click(function () {
+            if ($(this).next().val() > 1) {
+                if ($(this).next().val() > 1) $(this).next().val(+$(this).next().val() - 1);
+            }
+        });
+        /* :: DATE PICKER
+        ------------------------------------------------ */
+
+        // :: DAY
+        var $select_day = $("#select_day");
+        for (var i = 1; i < 32; i++) {
+            var day_number = i;
+            $('<option>')
+                .val(('0' + day_number).slice(-2))   // set the value
+                .text(i)    // set the text in in the <option>
+                .appendTo($select_day);
+        }
+
+
+        // :: MONTH
+        var $select_month = $("#select_month");
+        var options = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        for (var i = 0; i < options.length; i++) {
+            var month_number = i + 1;
+            $('<option>')
+                .val(('0' + month_number).slice(-2))          // set the value
+                .text(options[i])    // set the text in in the <option>
+                .appendTo($select_month);
+        }
+
+
+        // :: YEAR
+        var $select_year = $("#select_year");
+
+        // Get the current year
+        var year = new Date().getFullYear();
+        var $select_year = $('#select_year').empty();
+
+        for (var i = 0; i < 99; i++) {
+            $('<option>')
+                .val(year - i)     // set the value
+                .text(year - i)    // set the text in in the <option>
+                .appendTo($select_year);
+        }
+        // var btn1 = document.getElementById('btn1')
+        // var btn2 = document.getElementById('btn2')
+        // var btn3 = document.getElementById('btn3')
+        // var btn4 = document.getElementById('btn4')
+        // var btn5 = document.getElementById('btn5')
+        // var btn6 = document.getElementById('btn6')
+        // var btn7 = document.getElementById('btn7')
+        // var btn8 = document.getElementById('btn8')
+        // var btn9 = document.getElementById('btn9')
+        // var btn10 = document.getElementById('btn10')
+        // var btn11 = document.getElementById('btn11')
+        // var btn12 = document.getElementById('btn12')
+        // var btn13 = document.getElementById('btn13')
+        // var btn14 = document.getElementById('btn14')
+        // var btn15 = document.getElementById('btn15')
+        // var btn16 = document.getElementById('btn16')
+        // var btn17 = document.getElementById('btn17')
+        // var btn18 = document.getElementById('btn18')
+        // var btn19 = document.getElementById('btn19')
+        // var btn20 = document.getElementById('btn20')
+        // var btn21 = document.getElementById('btn21')
+        // var btn22 = document.getElementById('btn22')
+        // var btn23 = document.getElementById('btn23')
+        // var btn24 = document.getElementById('btn24')
+        // var btn25 = document.getElementById('btn25')
+        // var btn26 = document.getElementById('btn26')
+        // var btn27 = document.getElementById('btn27')
+        // var btn28 = document.getElementById('btn28')
+        // var btn29 = document.getElementById('btn29')
+        // var btn30 = document.getElementById('btn30')
+        // var btn31 = document.getElementById('btn31')
+        // var btn32 = document.getElementById('btn32')
+        // var btn33 = document.getElementById('btn33')
+        // var btn34 = document.getElementById('btn34')
+        // var btn35 = document.getElementById('btn35')
+        // var btn36 = document.getElementById('btn36')
+        // var btn37 = document.getElementById('btn37')
+        // var btn38 = document.getElementById('btn38')
+        // var btn39 = document.getElementById('btn39')
+        // var btn40 = document.getElementById('btn40')
+        // var btn41 = document.getElementById('btn41')
+        // var btn42 = document.getElementById('btn42')
+        // var btn43 = document.getElementById('btn43')
+        // var btn43 = document.getElementById('btn43')
+        // var btn44 = document.getElementById('btn44')
+        // var btn45 = document.getElementById('btn45')
+        // var btn46 = document.getElementById('btn46')
+        // var btn47 = document.getElementById('btn47')
+        // var btn48 = document.getElementById('btn48')
+        // var btn49 = document.getElementById('btn49')
+        // var btn50 = document.getElementById('btn50')
+        // var btn51 = document.getElementById('btn51')
+        // var btn52 = document.getElementById('btn52')
+        // var btn53 = document.getElementById('btn53')
+        // var btn54 = document.getElementById('btn54')
+        // var btn55 = document.getElementById('btn55')
+        // var hide44 = document.getElementById('hide44')
+        // var hide45 = document.getElementById('hide45')
+        // var hide46 = document.getElementById('hide46')
+        // var hide47 = document.getElementById('hide47')
+        // var hide48 = document.getElementById('hide48')
+        // var hide49 = document.getElementById('hide49')
+        // var hide50 = document.getElementById('hide50')
+        // var hide51 = document.getElementById('hide51')
+        // var hide52 = document.getElementById('hide52')
+        // var hide53 = document.getElementById('hide53')
+        // var hide54 = document.getElementById('hide54')
+        // var hide55 = document.getElementById('hide55')
+        // var input1 = document.getElementById('input1')
+        // var input2 = document.getElementById('input2')
+        // var input3 = document.getElementById('input3')
+        // var input4 = document.getElementById('input4')
+        // var input5 = document.getElementById('input5')
+        // var input6 = document.getElementById('input6')
+        // var input7 = document.getElementById('input7')
+        // var input8 = document.getElementById('input8')
+        // var input9 = document.getElementById('input9')
+        // var input10 = document.getElementById('input10')
+        // var input11 = document.getElementById('input11')
+        // var input12 = document.getElementById('input12')
+        // var input13 = document.getElementById('input13')
+        // var input14 = document.getElementById('input14')
+        // var input15 = document.getElementById('input15')
+        // var input16 = document.getElementById('input16')
+        // var input17 = document.getElementById('input17')
+        // var input18 = document.getElementById('input18')
+        // var input19 = document.getElementById('input19')
+        // var input20 = document.getElementById('input20')
+        // var input21 = document.getElementById('input21')
+        // var input22 = document.getElementById('input22')
+        // var input23 = document.getElementById('input23')
+        // var input24 = document.getElementById('input24')
+        // var input25 = document.getElementById('input25')
+        // var input26 = document.getElementById('input26')
+        // var input27 = document.getElementById('input27')
+        // var input28 = document.getElementById('input28')
+        // var input29 = document.getElementById('input29')
+        // var input30 = document.getElementById('input30')
+        // var input31 = document.getElementById('input31')
+        // var input32 = document.getElementById('input32')
+        // var input33 = document.getElementById('input33')
+        // var input34 = document.getElementById('input34')
+        // var input35 = document.getElementById('input35')
+        // var input36 = document.getElementById('input36')
+        // var input37 = document.getElementById('input37')
+        // var input38 = document.getElementById('input38')
+        // var input39 = document.getElementById('input39')
+        // var input40 = document.getElementById('input40')
+        // var input41 = document.getElementById('input41')
+        // var input42 = document.getElementById('input42')
+        // var input43 = document.getElementById('input43')
+        // var hideDate = document.getElementById('hideDate')
+        // btn1.addEventListener('click', () => {
+        //     input1. = false;
+        //     console.log('hello');
+        // })
+        // btn2.addEventListener('click', () => {
+        //     input2. = false;
+        //     console.log('hello');
+        // })
+        // btn3.addEventListener('click', () => {
+        //     input3. = false;
+        //     console.log('hello');
+        // })
+        // btn4.addEventListener('click', () => {
+        //     input4. = false;
+        //     console.log('hello');
+        // })
+        // btn5.addEventListener('click', () => {
+        //     input5. = false;
+        //     console.log('hello');
+        // })
+        // btn6.addEventListener('click', () => {
+        //     input6. = false;
+        //     input6.style.display = 'none'
+        //     hideDate.style.display = 'flex'
+        //     console.log('hello');
+        // })
+        // btn7.addEventListener('click', () => {
+        //     input7. = false;
+        //     console.log('hello');
+        // })
+        // btn8.addEventListener('click', () => {
+        //     input8. = false;
+        //     console.log('hello');
+        // })
+        // btn9.addEventListener('click', () => {
+        //     input9. = false;
+        //     console.log('hello');
+        // })
+        // btn10.addEventListener('click', () => {
+        //     input10. = false;
+        //     console.log('hello');
+        // })
+        // btn11.addEventListener('click', () => {
+        //     input11. = false;
+        //     console.log('hello');
+        // })
+        // btn12.addEventListener('click', () => {
+        //     input12. = false;
+        //     console.log('hello');
+        // })
+        // btn13.addEventListener('click', () => {
+        //     input13. = false;
+        //     console.log('hello');
+        // })
+        // btn14.addEventListener('click', () => {
+        //     input14. = false;
+        //     console.log('hello');
+        // })
+        // btn15.addEventListener('click', () => {
+        //     input15. = false;
+        //     console.log('hello');
+        // })
+        // btn16.addEventListener('click', () => {
+        //     input16. = false;
+        //     console.log('hello');
+        // })
+        // btn17.addEventListener('click', () => {
+        //     input17. = false;
+        //     console.log('hello');
+        // })
+        // btn18.addEventListener('click', () => {
+        //     input18. = false;
+        //     console.log('hello');
+        // })
+        // btn19.addEventListener('click', () => {
+        //     input19. = false;
+        //     console.log('hello');
+        // })
+        // btn20.addEventListener('click', () => {
+        //     input20. = false;
+        //     console.log('hello');
+        // })
+        // btn21.addEventListener('click', () => {
+        //     input21. = false;
+        //     console.log('hello');
+        // })
+        // btn22.addEventListener('click', () => {
+        //     input22. = false;
+        //     console.log('hello');
+        // })
+        // btn23.addEventListener('click', () => {
+        //     input23. = false;
+        //     console.log('hello');
+        // })
+        // btn24.addEventListener('click', () => {
+        //     input24. = false;
+        //     console.log('hello');
+        // })
+        // btn25.addEventListener('click', () => {
+        //     input25. = false;
+        //     console.log('hello');
+        // })
+        // btn26.addEventListener('click', () => {
+        //     input26. = false;
+        //     console.log('hello');
+        // })
+        // btn27.addEventListener('click', () => {
+        //     input27. = false;
+        //     console.log('hello');
+        // })
+        // btn28.addEventListener('click', () => {
+        //     input28. = false;
+        //     console.log('hello');
+        // })
+        // btn29.addEventListener('click', () => {
+        //     input29. = false;
+        //     console.log('hello');
+        // })
+        // btn30.addEventListener('click', () => {
+        //     input30. = false;
+        //     console.log('hello');
+        // })
+        // btn31.addEventListener('click', () => {
+        //     input31. = false;
+        //     console.log('hello');
+        // })
+        // btn32.addEventListener('click', () => {
+        //     input32. = false;
+        //     console.log('hello');
+        // })
+        // btn33.addEventListener('click', () => {
+        //     input33. = false;
+        //     console.log('hello');
+        // })
+        // btn34.addEventListener('click', () => {
+        //     input34. = false;
+        //     console.log('hello');
+        // })
+        // btn35.addEventListener('click', () => {
+        //     input35. = false;
+        //     console.log('hello');
+        // })
+        // btn36.addEventListener('click', () => {
+        //     input36. = false;
+        //     console.log('hello');
+        // })
+        // btn38.addEventListener('click', () => {
+        //     input38. = false;
+        //     console.log('hello');
+        // })
+        // btn39.addEventListener('click', () => {
+        //     input39. = false;
+        //     console.log('hello');
+        // })
+        // btn40.addEventListener('click', () => {
+        //     input40. = false;
+        //     console.log('hello');
+        // })
+        // btn41.addEventListener('click', () => {
+        //     input41. = false;
+        //     console.log('hello');
+        // })
+        // btn42.addEventListener('click', () => {
+        //     input42. = false;
+        //     console.log('hello');
+        // })
+        // btn43.addEventListener('click', () => {
+        //     input43. = false;
+        //     console.log('hello');
+        // })
+        btn44.addEventListener('click', () => {
+            hide44.style.display = 'block'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn45.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'block'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn46.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'block'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn47.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'block'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn48.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'block'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn49.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'block'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn50.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'block'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn51.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'block'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn52.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'block'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn53.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'block'
+            hide54.style.display = 'none'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn54.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'block'
+            hide55.style.display = 'none'
+            document.getElementById('hideRecordBox').style.display = 'none'
+            console.log('hello');
+        })
+        btn55.addEventListener('click', () => {
+            hide44.style.display = 'none'
+            hide45.style.display = 'none'
+            hide46.style.display = 'none'
+            hide47.style.display = 'none'
+            hide48.style.display = 'none'
+            hide49.style.display = 'none'
+            hide50.style.display = 'none'
+            hide51.style.display = 'none'
+            hide52.style.display = 'none'
+            hide53.style.display = 'none'
+            hide54.style.display = 'none'
+            hide55.style.display = 'block'
+            document.getElementById('hideRecordBox').style.display = 'block'
+            console.log('hello');
+        })
+
+        // var retired = document.getElementById('retired')
+        // var active = document.getElementById('active')
+        // var showColor = document.getElementsByClassName('color')
+        // var changecolor = document.getElementById('colorChanger')
+
+        // active.addEventListener('click', ()=>{
+        //     changecolor.style.backgroundColor = '#B42025'
+        //     active.style.backgroundColor = '#3FA707'
+        //     active.innerHTML = 'Active'
+        //     retired.style.backgroundColor = '#968A8A'
+        //     retired.innerHTML = 'Retired'
+
+        // })
+        // retired.addEventListener('click', ()=>{
+        //     changecolor.style.backgroundColor = '#968A8A'
+        //     retired.style.backgroundColor = '#3FA707'
+        //     retired.innerHTML = 'Active'
+        //     active.style.backgroundColor = '#B42025'
+        //     active.innerHTML = 'In-active'
+        // })
+    </script>
+    <script>
+        // document.getElementById('hide-btn').onclick
+        function showForm() {
+            document.getElementById('toggleForm').style.display = "block";
+            document.getElementById('add1').style.display = "block";
+            document.getElementById('hide-btn').style.display = "none";
+        }
+
+
+        document.getElementById('add1').onclick = duplicate;
+        var i = 0;
+        var original = document.getElementById('toggleForm');
+
+        function duplicate() {
+            var clone = original.cloneNode(true);
+            clone.id = "toggleForm" + ++i;
+            console.log(clone.id);
+            original.parentNode.appendChild(clone);
+        }
+    </script>
+    <script>
+        function duplicate() {
+            var clone = original.cloneNode(true);
+            clone.id = "toggleForm" + ++i;
+            console.log(clone.id);
+            original.parentNode.appendChild(clone);
+            let x = document.getElementById('input29').name = "year" + i;
+            document.getElementById('input30').name = "year" + i;
+            document.getElementById('input31').name = "amature" + i;
+            document.getElementById('input32').name = "weight" + i;
+            document.getElementById('input33').name = "discipline" + i;
+            document.getElementById('input34').name = "sanction" + i;
+            document.getElementById('input35').name = "rule" + i;
+            document.getElementById('input36').name = "achievement" + i;
+            console.log(x);
+        }
+    </script>
+</body>
+
+</html>

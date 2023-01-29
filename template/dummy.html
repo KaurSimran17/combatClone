@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Domain</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #toggleForm, #add{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-box3">
+        <h2>Achievements</h2>
+        <div class="showBoxes" id="showBox">
+            <form action="" method="post" enctype="multipart/form-data" id="toggleForm">
+                {% csrf_token %}
+                <!-- <div class="achievement-box" id="achievBox">
+                    <span class="cut-btn remove"><i></i></span>
+                    <div class="first-box">
+                        <div class="achievement-boxes"> -->
+                            <label for="">Year</label>
+                            <div class="main-input">
+                                <input type="text" name="year" id="input29">
+                                <span id="btn29"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <div class="achievement-boxes">
+                            <label for="">Amature/Pro</label>
+                            <div class="main-input">
+                                <input type="text" name="amature" id="input30">
+                                <span id="btn30"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <div class="achievement-boxes">
+                            <label for="">Weight</label>
+                            <div class="main-input">
+                                <input type="text" name="weight" id="input31">
+                                <span id="btn31"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-box">
+                        <div class="achievement-boxes">
+                            <label for="">Discipline</label>
+                            <div class="main-input">
+                                <input type="text" name="discipline" id="input32">
+                                <span id="btn32"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <div class="achievement-boxes">
+                            <label for="">Sanction</label>
+                            <div class="main-input">
+                                <input type="text" name="sanction" id="input33">
+                                <span id="btn33"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-box">
+                        <div class="achievement-boxes">
+                            <label for="">Rule Set</label>
+                            <div class="main-input">
+                                <input type="text" name="rule" id="input34">
+                                <span id="btn34"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <!-- <div class="achievement-boxes">
+                            <label for="">Achievement</label>
+                            <div class="main-input"> -->
+                                <input type="text" name="achieve" id="input35">
+                                <span id="btn35"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-box" id="achievBox">
+                    <span class="cut-btn remove"><i class='bx bx-x'></i></span>
+                    <div class="first-box">
+                        <div class="achievement-boxes">
+                            <label for="">Year</label>
+                            <div class="main-input">
+                                <input type="text" name="year" id="input29">
+                                <span id="btn29"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <div class="achievement-boxes">
+                            <label for="">Amature/Pro</label>
+                            <div class="main-input">
+                                <input type="text" name="amature" id="input30">
+                                <span id="btn30"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <div class="achievement-boxes">
+                            <label for="">Weight</label>
+                            <div class="main-input">
+                                <input type="text" name="weight" id="input31">
+                                <span id="btn31"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-box">
+                        <div class="achievement-boxes">
+                            <label for="">Discipline</label>
+                            <div class="main-input">
+                                <input type="text" name="discipline" id="input32">
+                                <span id="btn32"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <div class="achievement-boxes">
+                            <label for="">Sanction</label>
+                            <div class="main-input">
+                                <input type="text" name="sanction" id="input33">
+                                <span id="btn33"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-box">
+                        <div class="achievement-boxes">
+                            <label for="">Rule Set</label>
+                            <div class="main-input">
+                                <input type="text" name="rule" id="input34">
+                                <span id="btn34"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                        <div class="achievement-boxes">
+                            <label for="">Achievement</label>
+                            <div class="main-input">
+                                <input type="text" name="achieve" id="input35">
+                                <span id="btn35"><i class='bx bxs-pencil'></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <input type="submit" name="submit">
+            </form>
+           
+        </div>
+        <div class="add-more" id="hide-btn"">
+            <i class='bx bx-plus'></i>
+        </div>
+        <div class="add-more" id="add">
+            <i class='bx bx-plus'></i>
+        </div>
+    </div>
+    
+</body>
+<script>
+// document.getElementById('hide-btn').onclick
+// function showForm() {
+//     document.getElementById('toggleForm').style.display = "block";
+//     document.getElementById('add').style.display = "block";
+//     document.getElementById('hide-btn').style.display = "none";
+// }
+
+
+// document.getElementById('add').onclick = duplicate;
+// var i = 0;
+// var original = document.getElementById('toggleForm');
+
+// function duplicate() {
+//   var clone = original.cloneNode(true); 
+//   clone.id = "toggleForm" + ++i; 
+//   console.log(clone.id);
+//   original.parentNode.appendChild(clone);
+// }
+</script>
+
+</html>

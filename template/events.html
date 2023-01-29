@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <style>
+      .redClass {
+        background-color: red !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="{% static 'images/logo.png'%}" alt="" />
+      </div>
+      <div class="edit-profile">
+        <a href="" id="complete-profile">Complete Your Profile</a>
+        <a href="{% url 'edit_profile'%}" id="edit-profile">Edit Profile</a>
+        <a href="" id="logout"><i class="bx bx-log-out"></i></a>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      </div>
+    </header>
+    <div class="profile_details">
+      {% for j in fight %}
+
+      <div class="profile_left">
+        <div class="top-location">
+          <div class="location">
+            <div class="flag">flag</div>
+            <span>|</span>
+            <div class="country-location">{{j.country}}</div>
+            <span>|</span>
+            <div class="city-location">{{j.city}}</div>
+          </div>
+          <button id="btn-active">Deactivate</button>
+        </div>
+        <div class="profile-image">
+          <img src="{% static 'images/profile.png'%}" alt="" />
+          <div class="profile_name">
+            <div class="name">{{j.first_name}} {{j.last_name}}</div>
+            <div class="fighter-name">{{j.fight_name}}</div>
+          </div>
+        </div>
+        <div class="main-details">
+          <div class="box-details">
+            <span class="name-style">Style</span>
+            <h3>{{j.discipline}}</h3>
+          </div>
+          <div class="box-details">
+            <span class="name-style">GYM</span>
+            <h3>{{j.gym_name}}</h3>
+          </div>
+          <div class="box-details">
+            <span class="name-style">Weight</span>
+            <h3>{{j.fight_weight}}{{j.wight_units}}</h3>
+          </div>
+          <div class="box-details">
+            <span class="name-style">Height</span>
+            <h3>{{j.fight_height}}{{j.height_units}}</h3>
+          </div>
+          <div class="box-details">
+            <span class="name-style">Age</span>
+            <h3>22</h3>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="profile_right">
+        <div class="main-header">
+          <a href="fighter.html" id="back-btn"
+            ><i class="bx bx-chevron-left"></i><span>Event Calendar</span></a
+          >
+        </div>
+        <div class="eventBox">
+          <div class="calenderDate">
+            <div class="selectOption">
+              <select class="months eventCalender">
+                <option value="">October</option>
+              </select>
+              <select class="year eventCalender">
+                <option value="">2022</option>
+              </select>
+            </div>
+            <div class="showDate">
+              <!-- Display Event's Dates -->
+              <ul id="li">
+              {% for j in eve %}
+                <li style="display: none">{{j.date}}</li>
+                
+                {% endfor %}
+            </ul>
+              <p id="eventDate" style="display: none"></p>
+              <!-- ADD ID IN CALENDER -->
+              <div class="month">
+                <div class="week">
+                  <div class="day" id="1">1</div>
+                  <div class="day" id="2">2</div>
+                  <div class="day" id="3">3</div>
+                  <div class="day" id="4">4</div>
+                </div>
+                <div class="week">
+                  <div class="day" id="5">5</div>
+                  <div class="day" id="6">6</div>
+                  <div class="day" id="7">7</div>
+                  <div class="day" id="8">8</div>
+                  <div class="day" id="9">9</div>
+                  <div class="day" id="10">10</div>
+                  <div class="day" id="11">11</div>
+                </div>
+                <div class="week">
+                  <div class="day" id="12">12</div>
+                  <div class="day" id="13">13</div>
+                  <div class="day" id="14">14</div>
+                  <div class="day" id="15">15</div>
+                  <div class="day" id="16">16</div>
+                  <div class="day" id="17">17</div>
+                  <div class="day" id="18">18</div>
+                </div>
+                <div class="week">
+                  <div class="day" id="19">19</div>
+                  <div class="day" id="20">20</div>
+                  <div class="day" id="21">21</div>
+                  <div class="day" id="22">22</div>
+                  <div class="day" id="23">23</div>
+                  <div class="day" id="24">24</div>
+                  <div class="day" id="25">25</div>
+                </div>
+                <div class="week">
+                  <div class="day" id="26">26</div>
+                  <div class="day" id="27">27</div>
+                  <div class="day" id="28">28</div>
+                  <div class="day" id="29">29</div>
+                  <div class="day" id="30">30</div>
+                  <div class="day" id="31">31</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eventShowBox">
+            {% for i in eve %}
+            <div class="eventShowCard">
+              <div class="dateEvent">{{i.date}}/{{i.month}}/{{i.year}}</div>
+              <img src="{% static 'images/img1.png'%}" alt="" id="eventPic" />
+              <p class="session">Sunday Sessions</p>
+              <div class="eventDetails">
+                <span>Discipline:{{i.discipline}}</span><br />
+                <span>Sanctioning Body: {{i.sanct_body}}</span><br />
+                <span>Address: {{i.address}}</span><br />
+                <span>Medics Name:{{i.medics}}</span>
+              </div>
+              <img src="{% static 'images/Line2.png'%}" alt="" />
+              <div class="eventDetails">
+                <span>Host: {{i.host}}</span><br />
+                <span>Mob: {{i.mobile}}</span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- 
+            {%for k in eve%}
+            <p>{{k.date}}</p>
+            {% endfor %} -->
+
+        <!-- 
+            {%for s in eve %}
+            <td>
+                <tr id="eventDates">{{s.date}}</tr>
+            </td>
+            {% endfor %}
+             -->
+      </div>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+
+    <!-- CALENDER -->
+    <script>
+      let listLength = document.getElementById("li").listLength;
+      let ul = document.getElementById("li");
+      let listItems = ul.getElementsByTagName("li");
+      let lists = "";
+
+      for (let i = 0; i <= listItems.length - 1; i++) {
+        let list = listItems[i].innerText;
+        lists = lists + " " + list;
+      }
+      document.getElementById("eventDate").innerText = lists;
+      let date = document.getElementById("eventDate").innerText;
+      console.log("Events:", date);
+      let dateSplit = date.split(/\s/);
+      console.log("Splits", dateSplit);
+      let length = dateSplit.length;
+
+      const colorCode = () => {
+        return "#C99819";
+      };
+
+      for (let j = 1; j < 32; j++) {
+        for (let i = 0; i < length; i++) {
+          if (dateSplit[i] == document.getElementById([j]).innerText) {
+            document.getElementById([j]).style.background = colorCode();
+            document.getElementById([j]).style.cursor = "pointer";
+          }
+        }
+      }
+    </script>
+
+    <script>
+      $(".day").click(function (e) {
+        let date = document.getElementById("eventDate").innerText;
+        let dateSplit = date.split(/\s/);
+        let length = dateSplit.length;
+        let id = e.target.id;
+        for (let i = 0; i < length; i++) {
+          if (dateSplit[i] == id) {
+            $(".day").removeClass("redClass");
+            $(this).addClass("redClass");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

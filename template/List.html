@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="profile_details list">
+        <div class="profile_left admin-left list-left">
+            <img src="imgs/main2.png" alt="">
+            <div class="admin-details">
+                <h3>Name</h3>
+                <p>Shivam</p>
+                <img src="imgs/Line.png" alt="">
+                <h3>Email</h3>
+                <p>xyz@gmail.com</p>
+                <img src="imgs/Line.png" alt="">
+                <h3>Change Password</h3>
+                <img src="imgs/Line.png" alt="">
+                <button>Change</button>
+            </div>
+        </div>
+        <div class="profile_right list-right">
+            <div class="main-header admin-header">
+                <a href="fighter.html" id="back-btn"><i class='bx bx-chevron-left'></i><span>Registered Promoter
+                        list</span></a>
+                <a href="" id="logout"><i class='bx bx-log-out'></i></a>
+            </div>
+            <div class="main-header headerLine list-header">
+                <div class="list-div">
+                    <select name="" id="">
+                        <option value="">Search by Name/Email/Mob no.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="main-header headerLine list-header">
+                <select name="" id="">
+                    <option value="">Age</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Weight</option>
+                </select>
+                <select name="" id="">
+                    <option value="">City</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Suburb</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Country</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Discipline</option>
+                </select>
+            </div>
+            <div class="list-details">
+                <div class="headline">
+                    <p>S.No</p>
+                    <p>Name</p>
+                    <p>Country</p>
+                    <p>City</p>
+                    <p>Mobile No.</p>
+                    <p>Profile</p>
+                </div>
+                <div class="list-entries">
+                    <p>1</p>
+                    <p>Shivam</p>
+                    <p>India</p>
+                    <p>Saharanpur</p>
+                    <p>9027385670</p>
+                    <p class="view">View</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="notification" id="notification">
+            <div class="notification-box">
+                <div class="notify-line1">
+                    <p>Promoter Profile</p>
+                    <i class='bx bx-x' id="cut"></i>
+                </div>
+                <div class="notify-line2">
+                    <img src="imgs/img1.png" alt="">
+                </div>
+                <div class="notify-line3">
+                    <div class="notify-left">
+                        <div class="top-location">
+                            <div class="location">
+                                <div class="flag">flag</div>
+                                <span>|</span>
+                                <div class="country-location">New Zealand</div>
+                                <span>|</span>
+                                <div class="city-location">Auckland</div>
+                            </div>
+                        </div>
+                        <div class="profile-image">
+                            <img src="imgs/profile.png" alt="">
+                            <div class="profile_name">
+                                <div class="name">Mackenzie Jean Vellenoweth</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notify-right">
+                        <div class="box-details">
+                            <span class="name-style">Name</span>
+                            <h3>Shivam</h3>
+                        </div>
+                        <div class="box-details">
+                            <span class="name-style">Age/Date of Birth</span>
+                            <h3>22 | 27 December/1999</h3>
+                        </div>
+                        <div class="box-details">
+                            <span class="name-style">Address</span>
+                            <h3>City, Town, Country</h3>
+                        </div>
+                        <div class="box-details">
+                            <span class="name-style">Email</span>
+                            <h3>XYZ@gmail.com</h3>
+                        </div>
+                        <div class="box-details">
+                            <span class="name-style">Contact Info.</span>
+                            <h3>987654321</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+    <script>
+        var view= document.getElementsByClassName('view')
+        for(var i = 0; i < view.length; i++){
+            view[i].addEventListener('click', ()=>{
+                document.getElementById('notification').style.display = 'flex'
+            })
+        }
+        var cut = document.getElementById('cut')
+        cut.addEventListener('click', ()=>{
+            document.getElementById('notification').style.display = 'none'
+        })
+    </script>
+</body>
+
+</html>

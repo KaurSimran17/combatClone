@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+
+</head>
+
+<body>
+    <div class="profile_details">
+        <div class="profile_left admin-left">
+            <img src="{% static 'images/main2.png'%}" alt=""> 
+            <div class="admin-details">
+                <h3>{{user.first_name}}</h3>
+                <p></p>
+                <img src="{% static 'images/Line.png'%}" alt="">
+                <h3>Email</h3>
+                <p>xyz@gmail.com</p>
+                <img src="{% static 'images/Line.png'%}" alt="">
+                <h3>Change Password</h3>
+                <img src="{%static 'images/Line.png'%}" alt="">
+                <button>Change</button>
+            </div>           
+        </div>
+        <div class="profile_right">
+            <div class="main-header admin-header">
+                <a href="" id="logout"><i class='bx bx-log-out'></i></a>
+            </div>
+            <div class="registered-boxes">
+                <div class="registered-box">
+                    <div class="box-left">
+                        <p>Registered Fighter List</p>
+                        <h2>{{register_count}}</h2>
+                    </div>
+                    <div class="box-right">
+                        <a href="fighter list.html">></a>
+                    </div>
+                </div>
+                <div class="registered-box">
+                    <div class="box-left">
+                        <p>Registered Promoter List</p>
+                        <h2>{{promoter}}</h2>
+                    </div>
+                    <div class="box-right">
+                        <a href="">></a>
+                    </div>
+                </div>
+                
+                <div class="registered-box">
+                    <div class="box-left">
+                        <p>Medics</p>
+                        <h2>{{medics}}</h2>
+                    </div>
+                    <div class="box-right">
+                        <a href="">></a>
+                    </div>
+                </div>
+                <div class="registered-box">
+                    <div class="box-left">
+                        <p>Registered Sanctioning List</p>
+                        <h2>{{sanc}}</h2>
+                    </div>
+                    <div class="box-right">
+                        <a href="">></a>
+                    </div>
+                </div>
+                <div class="registered-box">
+                    <div class="box-left">
+                        <p>Registered GYM Owner List</p>
+                        <h2>{{gym}}</h2>
+                    </div>
+                    <div class="box-right">
+                        <a href="">></a>
+                    </div>
+                </div>
+                <div class="registered-box">
+                    <div class="box-left">
+                        <p>Registered Coach/Trainer List</p>
+                        <h2>{{coach}}</h2>
+                    </div>
+                    <div class="box-right">
+                        <a href="">></a>
+                    </div>
+                </div>
+            </div>
+            <div class="edit-event">
+                <a class="add-event">
+                    <img src="{% static 'images/calender2.png'%}" alt="">
+                    <p>Add/Edit Event</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+</body>
+
+</html>

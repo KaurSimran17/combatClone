@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Domain</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <style>
+        .tab2 {
+            display: none;
+        }
+        .tab2 #backImg{
+            background: transparent;
+            cursor: pointer;
+        }
+        .tab2 #backImg img{
+            width: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="{% static 'images/main.png' %}" alt="" class="img1">
+            <!-- <img src="imgs/main1.png" alt="" class="img2"> -->
+        </div>
+        <div class="right">
+            <div class="right_box">
+                <div class="tab1" id="tab1">
+                    <div class="links">
+                        <button><i class='bx bxl-google'></i> <span>Sign up with Google</span></button>
+                        <button><i class='bx bxl-facebook-square'></i></button>
+                        <button><i class='bx bxl-twitter'></i></button>
+                    </div>
+                    <div class="line">
+                        <span class="one">&#9135</span>
+                        <span class="two">&#9135</span>
+                        <span class="three">&#9135</span>
+                        <span class="four">&#9135</span>
+                        <span class="five">&#9135</span>
+                        <span class="six">&#9135</span>
+                        <span class="seven">&#9135</span>
+                        <span class="eight">&#9135</span>
+                        <span class="nine">&#9135</span>
+                        <span class="ten">&#9135</span>
+                        <span id="headings">Or</span>
+                        <span class="one">&#9135</span>
+                        <span class="two">&#9135</span>
+                        <span class="three">&#9135</span>
+                        <span class="four">&#9135</span>
+                        <span class="five">&#9135</span>
+                        <span class="six">&#9135</span>
+                        <span class="seven">&#9135</span>
+                        <span class="eight">&#9135</span>
+                        <span class="nine">&#9135</span>
+                        <span class="ten">&#9135</span>
+                    </div>
+
+            <form action="" method="post" name="myForm" enctype="multipart/form-data" onsubmit="return(validate());">
+                {% csrf_token %}
+                        <div class="first_input">
+                            <div class="first_left">
+                                <div class="input">
+                                    <label for="">First Name</label><br>
+                                    <input name="fname" type="text" id="first-name" onkeyup="validatefname()"><br>
+                                    <span class="hide" id="fname"></span>
+                                </div>
+                                <div class="input">
+                                    <label for="">Last Name</label><br>
+                                    <input name="lname" type="text" id="last-name" onkeyup="validatelname()"><br>
+                                    <span class="hide" id="lname"></span>
+                                </div>
+                            </div>
+                            <div class="first_right">
+                                <div class="input upload_image">
+                                    <label for="">Profile Image</label>
+                                    <!-- **********COPY PASTE************** -->
+                                    <div class="edit-img">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-edit">
+                                                <input type='file'  name="profile" id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                <label for="imageUpload"><i class='bx bx-upload'></i></label>
+                                            </div>
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview" style="background-image: url('');">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- **********COPY PASTE************** -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <label for=""> Email Id</label><br>
+                            <input type="email" name="email" id="email">
+                            <span class="hide" id="mail"></span>
+                        </div>
+                        <div class="input">
+                            <label for="">Contact Number</label><br>
+                            <input type="tel" name="contact" id="phn" onkeyup="validatephn()">
+                            <span class="hide" id="tel"></span>
+                        </div>
+                        <div class="input">
+                            <label for="">Date of Birth</label><br>
+                            <div class="dateTime">
+                                <div class="select">
+                                    <select name="date" id="select_day">
+                                        <option>Day</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select name="month" id="select_month">
+                                        <option>Month</option>
+                                    </select>
+                                </div>
+                                <div class="select">
+                                    <select name="year" id="select_year">
+                                        <option>Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <span class="hide" id="dob"></span>
+                        </div>
+                        <div class="input radio">
+                            <label for="">Gender</label>
+                            <div class="radios">
+                                <div class="radios_box">
+                                    <label for="male">Male</label>
+                                    <input type="radio" name="gender" id="male">
+                                </div>
+                                <div class="radios_box">
+                                    <label for="female">Female</label>
+                                    <input type="radio" name="gender" id="female">
+                                </div>
+                                <div class="radios_box">
+                                    <label for="other">Other</label>
+                                    <input type="radio" name="gender" id="other">
+                                </div>
+                            </div>
+                            <span class="hide" id="gender"></span>
+                        </div>
+                        <div class="input">
+                            <label for="">What city are you from?</label>
+                            <div class="areas">
+                                <div class="city">
+                                    <input type="text" name="city" id="" placeholder="City">
+                                    <span class="hide" id="city"></span>
+                                </div>
+                                <div class="town">
+                                    <input type="text" name="town" id="" placeholder="Town">
+                                    <span class="hide" id="city"></span>
+                                </div>
+                            </div>
+                            <div class="country">
+                                <input type="text" name="country" id="" placeholder="Country">
+                                <span class="hide" id="country"></span>
+                            </div>
+                        </div>
+                        <div class="input upload_img">
+                            <label for="">Upload Identification (Drivers License or Passport)</label><br>
+                            <!-- **********COPY PASTE************** -->
+                            <div class="wrapper">
+                                <input type="file" name="document" id="file-input">
+                                <label for="file-input">
+                                    <p id="para">Click To Upload</p>
+                                    <span id="show"></span>
+                                </label>
+                                <i class='bx bxs-x-circle remove'></i>
+                            </div>
+                            <!-- **********COPY PASTE************** -->
+                        </div>
+                        <div class="input">
+                            <label for="">Create Password</label>
+                            <input type="password" name="password" id="pass1">
+                            <span class="hide" id="pass1"></span>
+                        </div>
+                        <div class="input">
+                            <label for="">Confirm Password</label>
+                            <input type="password" name="" id="pass2" onkeyup="validate_password()">
+                            <span id="wrong_pass"></span>
+                        </div>
+
+                    <button id="next_btn" class="next_btn" onclick="switchTab()">Next</button>
+                    <div class="signUp_btn">
+                        <span>Already Register ? <a href="">Sign up Now</a></span>
+                    </div>
+
+                </div>
+                <div class="tab2" id="tab2">
+                    <button onclick="switchBackTab()" id="backImg"><img src="{% static 'iamges/back.png'%}" alt=""></button>
+                        <div class="input">
+                            <label for="">Fight Name(only if your trainer has given you one)</label>
+                            <input name="fight_name" type="text">
+                        </div>
+                        <div class="input">
+                            <label for="">What is your fight weight?</label>
+                            <div class="for_weight">
+                                <input type="text" name="fight_weight" id="weight_input" placeholder="00.000">
+                                <div class="inside_weight">
+                                    <select name="weight_units" id="weight" onchange="changefunc()">
+                                        <option name="weight_units" value="kg" id="kg">Kg</option>
+                                        <option name="weight_units" value="lbs" id="lbs">Lbs</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <label for="">What is your fight height?</label>
+                            <div class="for_weight">
+                                <input type="text" name="fight_height" id="height_input" placeholder="00.00">
+                                <div class="inside_weight">
+                                    <select name="height_units" id="height" onchange="changefunc1()">
+                                        <option value="ft" id="ft">Feet</option>
+                                        <option value="cm" id="cm">Cm</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- **********COPY PASTE************** -->
+                        <div class="input">
+                            <label for="">What discipline would you like to fight in?*</label><br>
+                            <select name="discipline" id="discipline">
+                                <option value="" selected disabled hidden></option>
+                                <option value="Boxing (Corporate)">Boxing (Corporate)</option>
+                                <option value="Boxing (Amatuer)">Boxing (Amatuer)</option>
+                                <option value="Boxing (Professional)">Boxing (Professional)</option>
+                                <option value="Kickboxing (K1)">Kickboxing (K1)</option>
+                                <option value="Muaythai (Mod Thai)">Muaythai (Mod Thai)</option>
+                                <option value="Muaythai (Full Thai Rules)">Muaythai (Full Thai Rules)</option>
+                                <option value="Muaythai (Professional)">Muaythai (Professional)</option>
+                                <option value="Kickboxing (Professional)">Kickboxing (Professional)</option>
+                                <option value="Mixed Martial Arts (Amatuer)">Mixed Martial Arts (Amatuer)</option>
+                                <option value="Mixed Martial Arts (Professional)">Mixed Martial Arts (Professional)</option>
+                                <option value="Wrestling">Wrestling</option>
+                                <option value="Jiu Jitsu (Gi)">Jiu Jitsu (Gi)</option>
+                                <option value="Jiu Jitsu (No Gi)">Jiu Jitsu (No Gi)</option>
+                                <option value="Judo">Judo</option>
+                                <option value="Taekwondo (WT)">Taekwondo (WT)</option>
+                                <option value="Taekwondo (ITF)">Taekwondo (ITF)</option>
+                                <!-- <option value=""><input type="text"></option> -->
+                            </select>
+                        </div>
+                        <!-- **********COPY PASTE************** -->
+                        <div class="input">
+                            <label for="">What GYM do you train at?*</label>
+                            <input name="gym_name" type="text">
+                        </div>
+                        <div class="input">
+                            <div class="radios_btn">
+                                <input type="checkbox" name="" id="" class="checkbox" required>
+                                <label for="">Your information on this platform is to find a suitable & fair match
+                                    for you & your opponent, by ticking checkbox you are stating that all the
+                                    information above is true?</label>
+                            </div><br>
+                            <div class="radios_btn">
+                                <input type="checkbox" name="" id="" class="checkbox" required>
+
+                                <label for="">I have read and I accept the <a href="privacy.html">Privacy
+                                        policy</a></label>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <input type="submit" name="submit" value="Create Account" id="submit_btn">
+                        </div>
+            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script>
+        function switchTab() {
+            document.getElementById('tab1').style.display = "none";
+            document.getElementById('tab2').style.display = "block";
+        }
+
+        function switchBackTab() {
+            document.getElementById('tab1').style.display = "block";
+            document.getElementById('tab2').style.display = "none";
+        }
+    </script>
+    <script>
+        function validate_password() {
+            var pass = document.getElementById('pass1').value;
+            var confirm_pass = document.getElementById('pass2').value;
+            if (pass != confirm_pass) {
+                document.getElementById('wrong_pass').style.color = 'red';
+                document.getElementById('wrong_pass').innerHTML
+                    = 'Password didn\'t match try again';
+                document.getElementById('changePage').disabled = true;
+                document.getElementById('changePage').style.opacity = (0.4);
+            }
+            else {
+                console.log("yepeee");
+                document.getElementById('wrong_pass').style.color = "green";
+                document.getElementById('wrong_pass').innerHTML = 'Password  matched';
+                document.getElementById('changePage').disabled = false;
+                document.getElementById('changePage').style.opacity = (1);
+            }
+        }
+        /* :: DATE PICKER
+        ------------------------------------------------ */
+
+        // :: DAY
+        var $select_day = $("#select_day");
+        for (var i = 1; i < 32; i++) {
+            var day_number = i;
+            $('<option>')
+                .val(('0' + day_number).slice(-2))   // set the value
+                .text(i)    // set the text in in the <option>
+                .appendTo($select_day);
+        }
+
+
+        // :: MONTH
+        var $select_month = $("#select_month");
+        var options = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        for (var i = 0; i < options.length; i++) {
+            var month_number = i + 1;
+            $('<option>')
+                .val(('0' + month_number).slice(-2))          // set the value
+                .text(options[i])    // set the text in in the <option>
+                .appendTo($select_month);
+        }
+
+
+        // :: YEAR
+        var $select_year = $("#select_year");
+
+        // Get the current year
+        var year = new Date().getFullYear();
+        var $select_year = $('#select_year').empty();
+
+        for (var i = 0; i < 99; i++) {
+            $('<option>')
+                .val(year - i)     // set the value
+                .text(year - i)    // set the text in in the <option>
+                .appendTo($select_year);
+        }
+        var fname = document.getElementById("fname")
+        var lname = document.getElementById("lname")
+        var phn = document.getElementById("phn")
+        var mail = document.getElementById("mail")
+        var tel = document.getElementById("tel")
+        var dob = document.getElementById("dob")
+        var gender = document.getElementById("gender")
+        var city = document.getElementById("city")
+        var country = document.getElementById("country")
+        var img1 = document.getElementById("img1")
+        var pass1 = document.getElementById("pass1")
+        var pass2 = document.getElementById("pass2")
+        function validatefname() {
+            var firstName = document.getElementById("first-name").value;
+            if (firstName.length == 0) {
+                fname.innerHTML = "First Name is ";
+                return false;
+            }
+            if (!firstName.match(/[a-z]{1,10}/)) {
+                fname.innerHTML = "Write Full Name";
+                return false;
+            }
+            fname.innerHTML = "Valid";
+            fname.style.color = "green"
+            return true;
+        }
+        function validatelname() {
+            var lastName = document.getElementById("last-name").value;
+            if (lastName.length == 0) {
+                lname.innerHTML = "First Name is ";
+                return false;
+            }
+            if (!lastName.match(/[a-z]{1,10}/)) {
+                lname.innerHTML = "Write Full Name";
+                return false;
+            }
+            lname.innerHTML = "Valid";
+            lname.style.color = "green"
+            return true;
+        }
+        function validatephn() {
+            var phone = document.getElementById("phn").value;
+            if (phone.length == 0) {
+                tel.innerHTML = "Phone no is ";
+                return false;
+            }
+            if (!phone.match(/[0-9]{10}$/)) {
+                tel.innerHTML = "Phone no is ";
+                return false;
+            }
+            tel.innerHTML = "Valid";
+            tel.style.color = "green"
+            return true;
+        }
+        // <!-- **********COPY PASTE************** -->
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function () {
+            readURL(this);
+        });
+        $('document').ready(function () {
+
+            var $file = $('#file-input'),
+                $para = $('#para')
+            $label = $file.next('label'),
+                $labelText = $label.find('span'),
+                // $showSpan = $('#show')
+                $labelRemove = $('i.remove'),
+                labelDefault = $labelText.text();
+
+            // on file change
+            $file.on('change', function (event) {
+                var fileName = $file.val().split('\\').pop();
+                if (fileName) {
+                    console.log($file)
+                    $para.hide();
+                    $labelText.show()
+                    $labelText.text(fileName);
+                    $labelRemove.show();
+                } else {
+                    $labelText.text(labelDefault);
+                    $labelRemove.hide();
+                }
+            });
+
+            // Remove file   
+            $labelRemove.on('click', function (event) {
+                $file.val("");
+                $labelText.text(labelDefault);
+                $labelRemove.hide();
+                $para.show();
+                $labelText.hide()
+                console.log($file)
+            });
+        })
+        // <!-- **********COPY PASTE************** -->
+    </script>
+    <script>
+        function changefunc() {
+            var weight = document.getElementById('weight').value;
+            var weightInput = document.getElementById('weight_input').value;
+
+            if (weight == 'kg') {
+
+                var lbs = weightInput * 2.20462262185;
+                console.log(weightInput, "kg" + "|" + lbs, "lbs");
+            }
+            else if (weight == 'lbs') {
+                var kg = Math.round(weightInput * 0.45359237);
+                console.log(weightInput, 'lbs' + "|" + kg, "kg");
+            }
+        }
+        function changefunc1() {
+            var height = document.getElementById('height').value;
+            var heightInput = document.getElementById('height_input').value;
+            if (height == 'ft') {
+                var cm = heightInput * 30.48;
+                console.log(heightInput, "ft" + "|" + cm, "cm");
+            }
+            else if (height == 'cm') {
+                var ft = Math.round(heightInput * 0.0328084);
+                console.log(heightInput, 'cm' + "|" + ft, "ft");
+            }
+        }
+    </script>
+</body>
+
+</html>

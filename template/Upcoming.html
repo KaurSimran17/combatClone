@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'images/logo.png'%}" alt="">
+        </div>
+        <div class="edit-profile">
+            <a href="" id="complete-profile">Complete Your Profile</a>
+            <a href="" id="edit-profile">Edit Profile</a>
+            <a href="" id="logout"><i class='bx bx-log-out'></i></a>
+        </div>
+    </header>
+    <div class="profile_details">
+        <div class="profile_left">
+            <div class="top-location">
+                <div class="location">
+                    <div class="flag">flag</div>
+                    <span>|</span>
+                    <div class="country-location">New Zealand</div>
+                    <span>|</span>
+                    <div class="city-location">Auckland</div>
+                </div>
+                <button id="btn-active">Deactivate</button>
+            </div>
+            <div class="profile-image">
+                <img src="{% static 'images/profile.png'%}" alt="">
+                <div class="profile_name">
+                    <div class="name">Mackenzie Jean Vellenoweth</div>
+                    <div class="fighter-name">Macca “The Devils Child” Jean</div>
+                </div>
+            </div>
+            <div class="main-details">
+                <div class="box-details">
+                    <span class="name-style">Style</span>
+                    <h3>Mixed Martial Art (MMA)</h3>
+                </div>
+                <div class="box-details">
+                    <span class="name-style">GYM</span>
+                    <h3>The Combat Centre
+                        - West Auckland</h3>
+                </div>
+                <div class="box-details">
+                    <span class="name-style">Weight</span>
+                    <h3>61.2 kg | 135 lbs</h3>
+                </div>
+                <div class="box-details">
+                    <span class="name-style">Height</span>
+                    <h3>61.2 kg | 135 lbs</h3>
+                </div>
+                <div class="box-details">
+                    <span class="name-style">Age</span>
+                    <h3>22</h3>
+                </div>
+            </div>
+        </div>
+        <div class="profile_right comingEvent">
+            <div class="main-header">
+                <a href="{%url 'events'%}" id="back-btn"><i class='bx bx-chevron-left'></i><span>Event Calendar</span></a>
+            </div>
+            <div class="main-header headerLine">
+                <select name="" id="">
+                    <option value="">Date</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Month</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Year</option>
+                </select>
+                <select name="" id="">
+                    <option value="">City</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Suburb</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Country</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Discipline</option>
+                </select>
+            </div>
+            <div class="eventShowBox">
+                <div class="eventShowCard">
+                    <div class="dateEvent">23/Oct/2021</div>
+                    <img src="{% static 'images/img1.png'%}" alt="" id="eventPic">
+                    <p class="session">Sunday Sessions</p>
+                    <div class="eventDetails">
+                        <span>Discipline:K1,MT</span><br>
+                        <span>Sanctioning Body: WKN, WMAF</span><br>
+                        <span>Address: Auckland, Ellerslie</span><br>
+                        <span>Medics Name: Fiona Nesbitt</span>
+                    </div>
+                    <img src="{% static 'images/Line2.png'%}" alt="">
+                    <div class="eventDetails">
+                        <span>Host: Jason Suttie</span><br>
+                        <span>Mob: 987373943</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+</body>
+
+</html>

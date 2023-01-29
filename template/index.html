@@ -1,0 +1,74 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combat Domain</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="left">
+        <img src="{% static 'images/main.png' %}" class="img-fluid" alt="" />
+        <!-- <img src="imgs/main.png" alt="" class="img1"> -->
+        <!-- <img src="imgs/main1.png" alt="" class="img2"> -->
+      </div>
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+      <div class="right right_section" id="right_section">
+        <div class="right_box">
+          <div class="select_box">
+            <h2>What is your role?</h2>
+            <div class="select select_option">
+              <select name="role" id="list" class="list">
+                <option value="roles" name="role" disabled selected id="disable_option">
+                  Select your role
+                </option>
+                <option name="promoter" value="promoter">Promoter</option>
+                <option name="medics" value="medics">Medics</option>
+                <option name="fighter" value="fighter" id="fighter">Fighter</option>
+                <option name="sanctioning"value="sanctioning">Sanctioning</option>
+                <option name="gym_owner" value="gym_owner">GYM Owner</option>
+                <option name="coach" value="coach">Coach/Trainer</option>
+              </select>
+            </div>
+            <a href="" id="changePage"
+              ><button id="next_btn" class="next_btn">Next</button></a
+            >
+          </div>
+          <div class="signUp_btn">
+            <span>Already Register ? <a href="{%url 'signin' %}">Sign up Now</a></span>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+      integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let nextBtn = document.getElementById("next_btn");
+      let changePage = document.getElementById("changePage");
+      nextBtn.addEventListener("click", () => {
+        let list1 = document.getElementById("list");
+        values = list1.value;
+        if (values == "fighter") {
+          changePage.href = "fighter.html";
+        } else {
+          changePage.href = "register.html";
+        }
+      });
+    </script>
+  </body>
+</html>

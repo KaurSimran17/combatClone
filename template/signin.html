@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combat Domain</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <div class="container create-profile">
+        <div class="left">
+            <video autoplay playsinline muted>
+                <source src="{% static 'video/vid.mp4'%}" type="video/mp4" />
+            </video>
+            <div class="loader" id="loader"></div>
+        </div>
+        <div class="right signin">
+            <div class="right_box">
+
+                <form action=""  method="post" enctype="multipart/form-data" onsubmit="return(validate());">
+                    {% csrf_token %}
+                    <div class="input">
+                        <label for=""> Email Address</label><br>
+                        <input type="email" name="email_id" id="email">
+                        <span class="hide" id="mail"></span>
+                    </div>
+                    <div class="input">
+                        <label for="">Password</label>
+                        <input type="password" name="password_id" id="pass1">
+                        <span class="hide" id="pass1"></span>
+                    </div>
+                    <input type="submit" name="submit" value="Sign In" id="next_btn" class="next_btn">
+
+                </form>
+                <div class="signUp_btn">
+                    <span>Not register yet? <a href="{% url 'index'%}">Register Now </a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+        integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+    <script>
+        var loader = document.getElementById('loader')
+        var loader = bodymovin.loadAnimation({
+            container: loader, // required
+            path: '1234.json',
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            name: "Demo Animation",
+        });
+        function validate_password() {
+            var pass = document.getElementById('pass1').value;
+            var confirm_pass = document.getElementById('pass2').value;
+            if (pass != confirm_pass) {
+                document.getElementById('wrong_pass').style.color = 'red';
+                document.getElementById('wrong_pass').innerHTML
+                    = 'Password didn\'t match try again';
+                document.getElementById('changePage').disabled = true;
+                document.getElementById('changePage').style.opacity = (0.4);
+            }
+            else {
+                console.log("yepeee");
+                document.getElementById('wrong_pass').style.color = "green";
+                document.getElementById('wrong_pass').innerHTML = 'Password  matched';
+                document.getElementById('changePage').disabled = false;
+                document.getElementById('changePage').style.opacity = (1);
+            }
+        }
+        /* :: DATE PICKER
+        ------------------------------------------------ */
+
+        // :: DAY
+        var $select_day = $("#select_day");
+        for (var i = 1; i < 32; i++) {
+            var day_number = i;
+            $('<option>')
+                .val(('0' + day_number).slice(-2))   // set the value
+                .text(i)    // set the text in in the <option>
+                .appendTo($select_day);
+        }
+
+
+        // :: MONTH
+        var $select_month = $("#select_month");
+        var options = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        for (var i = 0; i < options.length; i++) {
+            var month_number = i + 1;
+            $('<option>')
+                .val(('0' + month_number).slice(-2))          // set the value
+                .text(options[i])    // set the text in in the <option>
+                .appendTo($select_month);
+        }
+
+
+        // :: YEAR
+        var $select_year = $("#select_year");
+
+        // Get the current year
+        var year = new Date().getFullYear();
+        var $select_year = $('#select_year').empty();
+
+        for (var i = 0; i < 99; i++) {
+            $('<option>')
+                .val(year - i)     // set the value
+                .text(year - i)    // set the text in in the <option>
+                .appendTo($select_year);
+        }
+        var fname = document.getElementById("fname")
+        var lname = document.getElementById("lname")
+        var phn = document.getElementById("phn")
+        var mail = document.getElementById("mail")
+        var tel = document.getElementById("tel")
+        var dob = document.getElementById("dob")
+        var gender = document.getElementById("gender")
+        var city = document.getElementById("city")
+        var country = document.getElementById("country")
+        var img1 = document.getElementById("img1")
+        var pass1 = document.getElementById("pass1")
+        var pass2 = document.getElementById("pass2")
+        function validatefname() {
+            var firstName = document.getElementById("first-name").value;
+            if (firstName.length == 0) {
+                fname.innerHTML = "First Name is ";
+                return false;
+            }
+            if (!firstName.match(/[a-z]{1,10}/)) {
+                fname.innerHTML = "Write Full Name";
+                return false;
+            }
+            fname.innerHTML = "Valid";
+            fname.style.color = "green"
+            return true;
+        }
+        function validatelname() {
+            var lastName = document.getElementById("last-name").value;
+            if (lastName.length == 0) {
+                lname.innerHTML = "First Name is ";
+                return false;
+            }
+            if (!lastName.match(/[a-z]{1,10}/)) {
+                lname.innerHTML = "Write Full Name";
+                return false;
+            }
+            lname.innerHTML = "Valid";
+            lname.style.color = "green"
+            return true;
+        }
+        function validatephn() {
+            var phone = document.getElementById("phn").value;
+            if (phone.length == 0) {
+                tel.innerHTML = "Phone no is ";
+                return false;
+            }
+            if (!phone.match(/[0-9]{10}$/)) {
+                tel.innerHTML = "Phone no is ";
+                return false;
+            }
+            tel.innerHTML = "Valid";
+            tel.style.color = "green"
+            return true;
+        }
+        // <!-- **********COPY PASTE************** -->
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function () {
+            readURL(this);
+        });
+        $('document').ready(function () {
+
+            var $file = $('#file-input'),
+                $para = $('#para')
+            $label = $file.next('label'),
+                $labelText = $label.find('span'),
+                // $showSpan = $('#show')
+                $labelRemove = $('i.remove'),
+                labelDefault = $labelText.text();
+
+            // on file change
+            $file.on('change', function (event) {
+                var fileName = $file.val().split('\\').pop();
+                if (fileName) {
+                    console.log($file)
+                    $para.hide();
+                    $labelText.show()
+                    $labelText.text(fileName);
+                    $labelRemove.show();
+                } else {
+                    $labelText.text(labelDefault);
+                    $labelRemove.hide();
+                }
+            });
+
+            // Remove file   
+            $labelRemove.on('click', function (event) {
+                $file.val("");
+                $labelText.text(labelDefault);
+                $labelRemove.hide();
+                $para.show();
+                $labelText.hide()
+                console.log($file)
+            });
+        })
+        // <!-- **********COPY PASTE************** -->
+    </script>
+</body>
+
+</html>
